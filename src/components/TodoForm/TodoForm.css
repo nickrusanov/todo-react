@@ -1,0 +1,109 @@
+.todo__form {
+	margin-top: 20px;
+
+	display: flex;
+	gap: 10px
+}
+
+.todo__input {
+	padding: 12px;
+	width: 100%;
+
+	background-color: white;
+	border-radius: 8px;
+}
+
+.todo__btn {
+	padding: 8px 12px;
+
+	color: black;
+
+	background-color: white;
+	border-radius: 8px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.todo__btn:disabled {
+	color: grey;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/******************** MEDIA ********************/
+
+@media (hover: hover) and (pointer: fine) {
+
+	.todo__btn,
+	.todo__input {
+		transition: all .2s ease;
+	}
+
+	.todo__btn:not(:disabled):hover {
+		color: blueviolet;
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+	}
+
+	.todo__input:hover {
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+	}
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+
+	.todo__btn {
+		position: relative;
+	}
+
+	.todo__btn-text {
+		position: relative;
+		z-index: 2;
+	}
+
+	.todo__btn-ripple {
+		width: 100%;
+		height: 100%;
+
+		overflow: hidden;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+
+	.todo__btn--active .todo__btn-ripple:after {
+		animation: btnActive .8s ease-out;
+	}
+
+	.todo__btn-ripple::after {
+		content: '';
+		width: 50px;
+		height: 50px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+
+		border-radius: 100%;
+		background-color: rgba(104, 15, 187, 0.1)
+	}
+
+	.todo__btn:not(:disabled):active .todo__btn-text {
+		color: blueviolet;
+	}
+
+	@keyframes btnActive {
+		from {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		to {
+			transform: translate(-50%, -50%) scale(3);
+			opacity: 0;
+		}
+	}
+}

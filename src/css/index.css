@@ -1,0 +1,31 @@
+body {
+	min-width: 320px;
+
+	font: 20px/1.5 'Arial';
+
+	background-color: darkmagenta;
+}
+
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.title-1 {
+	font-size: 50px;
+	font-weight: 700;
+	color: white;
+	text-align: center;
+}
+
+@keyframes elementAppear {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+	}
+}

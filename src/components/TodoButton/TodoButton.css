@@ -1,0 +1,34 @@
+.todo__item-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	max-width: 40px;
+	height: 40px;
+
+	position: relative;
+
+}
+
+.todo__item-btn-icon {
+	width: 24px;
+}
+
+/******************** MEDIA ********************/
+
+@media (hover: hover) and (pointer: fine) {
+
+	.todo__item-btn,
+	.todo__item-btn-icon {
+		transition: all .2s ease;
+	}
+
+	.todo__item-btn:hover .todo__item-btn-icon--remove {
+		color: red;
+	}
+
+	.todo__item-btn:hover .todo__item-btn-icon--complete {
+		color: green;
+	}
+}

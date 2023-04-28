@@ -1,0 +1,8 @@
+.todo__counter {
+	margin-top: 20px;
+
+	text-align: center;
+	color: white;
+
+	animation: elementAppear 1s ease 0s forwards;
+}

@@ -1,0 +1,83 @@
+.todo__action-btn {
+	width: 48px;
+	height: 48px;
+
+	border-radius: 8px;
+	background-color: white;
+
+	-webkit-tap-highlight-color: transparent;
+}
+
+.todo__actions-btn-icon {
+	width: 24px;
+
+	position: relative;
+	top: 2px;
+}
+
+.todo__action-btn:disabled {
+	color: grey;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+/******************** MEDIA ********************/
+
+@media (hover: hover) and (pointer: fine) {
+
+	.todo__action-btn {
+		transition: all 0.2s;
+	}
+
+	.todo__action-btn:not(:disabled):hover {
+		color: blueviolet;
+
+		box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+	}
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+
+	.todo__action-btn {
+		position: relative;
+	}
+
+	.todo__action-btn:not(:disabled):active {
+		color: blueviolet;
+	}
+
+	.todo__action-btn-ripple {
+		width: 100%;
+		height: 100%;
+
+		overflow: hidden;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+
+	.todo__action-btn--active .todo__action-btn-ripple:after {
+		animation: btnActive .8s ease-out;
+	}
+
+	.todo__action-btn-ripple::after {
+		content: '';
+		width: 50px;
+		height: 50px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+
+		border-radius: 100%;
+		background-color: rgba(104, 15, 187, 0.1)
+	}
+
+	.todo__action-btn:not(:disabled):active .todo__action-btn-text {
+		color: blueviolet;
+	}
+}
