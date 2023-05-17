@@ -1,5 +1,7 @@
 # TODO (список задач)
 
+Ссылка на GitHub Pages: https://nickrusanov.github.io/todo-react/
+
 Простое приложение на React JS.
 
 ### Доступные скрипты
